@@ -10,8 +10,7 @@ class CinemaRouterCompositionRoot {
     func buildRoot() -> some View {
         CinemaList()
             .environment(\.cinemaStore, cinemaStore)
-//            .environment(router)
-            .environmentObject(router)
+            .environment(router)
             .navigationDestination(for: CinemaRoute.self) {[weak self] value in
                 self?.build(route: value)
             }
@@ -23,8 +22,7 @@ class CinemaRouterCompositionRoot {
         case .details(let cinema): 
             CinemaDetailView(cinema: cinema)
                 .environment(\.filmStore, filmStore)
-                .environmentObject(router)
-//                .environment(router)
+                .environment(router)
         case .booking(let film):
             FilmBookingView(film: film)
                 .environment(BookingSession(film: film))

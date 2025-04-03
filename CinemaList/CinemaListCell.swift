@@ -1,8 +1,7 @@
 import SwiftUI
 
 struct CinemaListCell: View {
-//    @Environment(Router<CinemaRoute>.self) private var cinemaRouter
-    @EnvironmentObject private var cinemaRouter: Router<CinemaRoute>
+    @Environment(Router<CinemaRoute>.self) private var cinemaRouter
     let cinema: Cinema
     
     init(cinema: Cinema) {
@@ -29,6 +28,5 @@ struct CinemaListCell: View {
 
 #Preview {
     CinemaListCell(cinema: Cinema(id: "1", name: "Vue Finchley Lido", location: "North Finchley", description: "Has facilities nearby such as swimming pool, restaurants and a car park", hasDynamicPricing: false))
-//        .environment(Router<CinemaRoute>())
-        .environmentObject(Router<CinemaRoute>())
+        .environment(Router<CinemaRoute>())
 }

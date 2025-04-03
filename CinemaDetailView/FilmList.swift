@@ -26,5 +26,4 @@ struct FilmList: View {
     FilmList(cinemaId: "123")
         .environment(\.filmStore, FilmStore(filmFetcher: FilmRepository()))
         .environment(Router<CinemaRoute>())
-//        .environmentObject(Router<CinemaRoute>())
 }

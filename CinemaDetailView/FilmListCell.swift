@@ -1,8 +1,7 @@
 import SwiftUI
 
 struct FilmListCell: View {
-//    @Environment(Router<CinemaRoute>.self) private var cinemaRouter
-    @EnvironmentObject private var cinemaRouter: Router<CinemaRoute>
+    @Environment(Router<CinemaRoute>.self) private var cinemaRouter
     
     let film: Film
     private let durationFormatter: NumberFormatter = NumberFormatter()
@@ -42,6 +41,5 @@ struct FilmListCell: View {
 
 #Preview {
     FilmListCell(film: Film(id: "1", name: "Avengers Endgame", duration: 200, description: "Final movie of the Infinity Saga", rating: 5))
-//        .environment(Router<CinemaRoute>())
-        .environmentObject(Router<CinemaRoute>())
+        .environment(Router<CinemaRoute>())
 }
