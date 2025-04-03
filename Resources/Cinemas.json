@@ -1,0 +1,23 @@
+[
+    {
+        "id": "1",
+        "name": "Vue Finchley Lido",
+        "location": "North Finchley",
+        "description": "Has facilities nearby such as swimming pool, restaurants and a car park",
+        "hasDynamicPricing": false
+    },
+    {
+        "id": "2",
+        "name": "Everyman Maida Vale",
+        "location": "Maida Vale",
+        "description": "Nice and small cinema within a few meters walk from the station",
+        "hasDynamicPricing": false
+    },
+    {
+        "id": "3",
+        "name": "Odeon Leicester Square",
+        "location": "Leicester Square",
+        "description": "In the heart of Central London, hosting premieres of all movies",
+        "hasDynamicPricing": true
+    }
+]
