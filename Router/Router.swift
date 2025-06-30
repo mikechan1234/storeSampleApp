@@ -9,3 +9,7 @@ class Router<T: Hashable> {
         self.route.append(destination)
     }
 }
+
+extension EnvironmentValues {
+    @Entry var cinemaRouter: Router<CinemaRoute> = Router<CinemaRoute>()
+}

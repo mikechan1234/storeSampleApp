@@ -1,5 +1,5 @@
-import SwiftUI
 import Observation
+import SwiftUI
 
 @Observable
 class CinemaStore {
@@ -18,12 +18,5 @@ class CinemaStore {
 }
 
 extension EnvironmentValues {
-    var cinemaStore: CinemaStore {
-        get { self[CinemaStoreKey.self] }
-        set { self[CinemaStoreKey.self] = newValue }
-    }
-}
-
-private struct CinemaStoreKey: EnvironmentKey {
-    static var defaultValue: CinemaStore = CinemaStore(cinemaFetcher: CinemaRepository(decoder: JSONDecoder()))    
+    @Entry var cinemaStore = CinemaStore(cinemaFetcher: CinemaRepository(decoder: JSONDecoder()))
 }

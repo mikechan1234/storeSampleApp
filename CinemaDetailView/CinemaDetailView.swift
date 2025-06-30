@@ -17,11 +17,10 @@ struct CinemaDetailView: View {
                 }
             }
             .padding()
-            .clipShape(RoundedRectangle(cornerRadius: 10))
+            .containerRelativeFrame(.horizontal, alignment: .leading)
             FilmList(cinemaId: cinema.id)
             Spacer()
         }
-
         .navigationTitle("Cinema")
     }
 }

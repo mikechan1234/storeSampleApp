@@ -1,5 +1,3 @@
-import SwiftUI
-
 //{
 //    "id": "1",
 //    "name": "Vue Finchley Lido",

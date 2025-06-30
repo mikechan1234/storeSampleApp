@@ -17,12 +17,5 @@ class FilmStore {
 }
 
 extension EnvironmentValues {
-    var filmStore: FilmStore {
-        get { self[FilmStoreKey.self] }
-        set { self[FilmStoreKey.self] = newValue }
-    }
-}
-
-private struct FilmStoreKey: EnvironmentKey {
-    static var defaultValue: FilmStore = FilmStore(filmFetcher: FilmRepository())    
+    @Entry var filmStore = FilmStore(filmFetcher: FilmRepository())
 }

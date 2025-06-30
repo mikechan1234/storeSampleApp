@@ -1,7 +1,8 @@
 import SwiftUI
 
 struct CinemaListCell: View {
-    @Environment(Router<CinemaRoute>.self) private var cinemaRouter
+//    @Environment(Router<CinemaRoute>.self) private var cinemaRouter
+    @Environment(\.cinemaRouter) private var cinemaRouter
     let cinema: Cinema
     
     init(cinema: Cinema) {
@@ -15,18 +16,17 @@ struct CinemaListCell: View {
                 Text(cinema.description)
             }
             .padding()
-            Spacer()
+            .containerRelativeFrame(.horizontal, alignment: .leading)
         }
         .contentShape(Rectangle())
         .onTapGesture {
             cinemaRouter.go(to: .details(cinema))
         }
-//        .background(Color.red)
-//        .mask(RoundedRectangle(cornerRadius: 5))
     }
 }
 
 #Preview {
     CinemaListCell(cinema: Cinema(id: "1", name: "Vue Finchley Lido", location: "North Finchley", description: "Has facilities nearby such as swimming pool, restaurants and a car park", hasDynamicPricing: false))
-        .environment(Router<CinemaRoute>())
+//        .environment(Router<CinemaRoute>())
+        .environment(\.cinemaRouter, Router<CinemaRoute>())
 }

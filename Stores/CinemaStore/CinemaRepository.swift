@@ -15,8 +15,9 @@ struct CinemaRepository: CinemaFetchable {
         guard let fileUrl = Bundle.main.url(forResource: "Cinemas", withExtension: "json") else { 
             fatalError("Can't load the JSON")
         }
-        let data = try! Data(contentsOf: fileUrl)
+        
         do {
+            let data = try Data(contentsOf: fileUrl)
             return try decoder.decode([Cinema].self, from: data)
         } catch {
             print(error)
